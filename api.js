@@ -8,12 +8,15 @@ function atualizarQuartos() {
         const status = data[quarto];
         const div = document.createElement("div");
         div.textContent = `${quarto}: ${status}`;
-        container.appendChild(div);
+      container.appendChild(div);
       }
     })
     .catch(err => console.error(err));
 }
 
-// Atualiza a cada 5 segundos
-setInterval(atualizarQuartos, 5000);
+// Atualiza imediatamente ao carregar a página
 atualizarQuartos();
+
+// Continua atualizando a cada 5 segundos
+setInterval(atualizarQuartos, 5000);
+
